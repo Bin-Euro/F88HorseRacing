@@ -1,6 +1,11 @@
 package com.example.f88horseracing;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Spannable;
@@ -28,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private int balance = 10000;
     private List<BetItem> betList = new ArrayList<>();
     private BetAdapter betAdapter;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
         startButton.setOnClickListener(v -> startRace());
         resetButton.setOnClickListener(v -> resetRace());
+        resetRace();
     }
 
     private void startRace() {
+
         startButton.setEnabled(false);
         bet1 = getBetAmount(editText1);
         bet2 = getBetAmount(editText2);
@@ -192,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void resetRace() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.xoso);
+        mediaPlayer.start();
         startButton.setEnabled(true);
         checkBox1.setChecked(false);
         checkBox2.setChecked(false);
@@ -256,7 +267,8 @@ public class MainActivity extends AppCompatActivity {
         if (!newBets.isEmpty()) {
             String title = totalWinningAmount > 0 ? "Winner" : "Loser";
             BetItem firstBet = newBets.get(0); // Assume all bets have the same dateTime and winningHorseNumber
-            showWinnerPopup(title, firstBet.getDateTime(), firstBet.getBetHorseNumber(), winningHorseNumber, totalWinningAmount);
+            //showWinnerPopup(title, firstBet.getDateTime(), firstBet.getBetHorseNumber(), winningHorseNumber, totalWinningAmount);
+            displayWiningPopupDialog(winningHorseNumber, newBets);
         }
 
     }
@@ -280,5 +292,80 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void displayWiningPopupDialog(int winingHorseNumber, List<BetItem> listbetItem) {
+        Dialog popupDialog = new Dialog(this);
+        popupDialog.setCancelable(false);
+        popupDialog.setContentView(R.layout.popup_dialog);
+        Objects.requireNonNull(popupDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView txtWiningHorseNumber = (TextView) popupDialog.findViewById(R.id.wining_horse);
+        TextView txtBetHorseNumber = (TextView) popupDialog.findViewById(R.id.choose_horse);
+        Button btnBack = (Button) popupDialog.findViewById(R.id.btnBack);
+        TextView txtMoney = (TextView) popupDialog.findViewById(R.id.money);
+        SeekBar skbHorse1 = (SeekBar) findViewById(R.id.seekBar1);
+        SeekBar skbHorse2 = (SeekBar) findViewById(R.id.seekBar2);
+        SeekBar skbHorse3 = (SeekBar) findViewById(R.id.seekBar3);
+        int amountMoney = 0;
+        String betHorses = "";
+        int flags = 1;
+        for (BetItem betItem: listbetItem) {
+            amountMoney += betItem.getPlusOrMinus();
+            if (flags > 1){
+                betHorses += ", ";
+            }
+            betHorses += "Number " + betItem.getBetHorseNumber();
+            flags++;
+        }
+        mediaPlayer.stop();
+        if (amountMoney > 0) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.win);
+            mediaPlayer.start();
+            txtMoney.setTextColor(Color.parseColor("#0AFF00"));
+            txtMoney.setText("+" + amountMoney);
+        }else{
+            mediaPlayer = MediaPlayer.create(this, R.raw.lose);
+            mediaPlayer.start();
+            txtMoney.setTextColor(Color.parseColor("#FF2F2F"));
+            txtMoney.setText("" + amountMoney);
+        }
 
+        switch (winingHorseNumber) {
+            case 1: {
+                ColorStateList thumbTintList = skbHorse1.getThumbTintList();
+                if (thumbTintList != null) {
+                    int thumbTintColor = thumbTintList.getDefaultColor();
+                    txtWiningHorseNumber.setTextColor(thumbTintColor);
+                }
+                break;
+            }
+            case 2: {
+                ColorStateList thumbTintList = skbHorse2.getThumbTintList();
+                if (thumbTintList != null) {
+                    int thumbTintColor = thumbTintList.getDefaultColor();
+                    txtWiningHorseNumber.setTextColor(thumbTintColor);
+                }
+                break;
+            }
+            case 3: {
+                ColorStateList thumbTintList = skbHorse3.getThumbTintList();
+                if (thumbTintList != null) {
+                    int thumbTintColor = thumbTintList.getDefaultColor();
+                    txtWiningHorseNumber.setTextColor(thumbTintColor);
+                }
+                break;
+            }
+            default:
+                txtWiningHorseNumber.setTextColor(Color.BLACK);
+                break;
+        }
+        txtWiningHorseNumber.setText("Number " + winingHorseNumber);
+        txtBetHorseNumber.setText(betHorses);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupDialog.cancel();
+                mediaPlayer.stop();
+            }
+        });
+        popupDialog.show();
+    }
 }
