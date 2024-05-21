@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
             int plusOrMinus1 = (winningHorseNumber == 1) ? betAmount1 * 2 : -betAmount1;
             balance += plusOrMinus1;
             totalWinningAmount += plusOrMinus1;
-            String dateTime1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+            String dateTime1 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
             BetItem betItem1 = new BetItem(dateTime1, 1, winningHorseNumber, plusOrMinus1);
             newBets.add(betItem1);
         }
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             int plusOrMinus2 = (winningHorseNumber == 2) ? betAmount2 * 2 : -betAmount2;
             balance += plusOrMinus2;
             totalWinningAmount += plusOrMinus2;
-            String dateTime2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+            String dateTime2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
             BetItem betItem2 = new BetItem(dateTime2, 2, winningHorseNumber, plusOrMinus2);
             newBets.add(betItem2);
         }
@@ -244,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
             int plusOrMinus3 = (winningHorseNumber == 3) ? betAmount3 * 2 : -betAmount3;
             balance += plusOrMinus3;
             totalWinningAmount += plusOrMinus3;
-            String dateTime3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+            String dateTime3 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
             BetItem betItem3 = new BetItem(dateTime3, 3, winningHorseNumber, plusOrMinus3);
             newBets.add(betItem3);
         }

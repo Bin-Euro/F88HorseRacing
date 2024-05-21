@@ -9,18 +9,19 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="211dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:background="#1D8121"
         android:text="F88-HouseRacing"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <SeekBar
         android:id="@+id/seekBar1"
@@ -54,7 +55,8 @@
         android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar1"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:ignore="Autofill,HardcodedText" />
 
     <SeekBar
         android:id="@+id/seekBar2"
@@ -87,7 +89,8 @@
         android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar2"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toBottomOf="@+id/editText1"
+        tools:ignore="Autofill,HardcodedText" />
 
     <SeekBar
         android:id="@+id/seekBar3"
@@ -121,7 +124,8 @@
         android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar3"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:ignore="Autofill,HardcodedText" />
 
     <Button
         android:id="@+id/startButton"
@@ -133,7 +137,8 @@
         android:text="Start"
         app:layout_constraintEnd_toStartOf="@+id/resetButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar3"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/resetButton"
@@ -143,111 +148,128 @@
         android:layout_marginEnd="76dp"
         android:text="Reset"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar3"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/balanceTextView"
         android:layout_width="93dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="32dp"
-        android:text="Balance"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Balance: "
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/balanceAmountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="52dp"
         android:text="10000$"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toEndOf="@id/balanceTextView"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="105dp"
         android:layout_height="29dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="24dp"
-        android:background="#ECE7E7"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
         android:text="Horse - 02"
         android:textColor="#F44336"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="105dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
-        android:background="#ECE7E7"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
         android:text="Horse - 03"
         android:textColor="#2196F3"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/seekBar3"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="105dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:background="#ECE7E7"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
         android:text="Horse - 01"
         android:textColor="#009688"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/seekBar1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <ListView
         android:id="@+id/betListView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginLeft="10pt"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:text="|DateTime  |"
+        android:text="|  Finished  |"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/betListView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:text="| Horse Win |"
+        android:text="|  Horse Win  |"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/betListView"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:text=" Status |"
+        android:text="  Status  |"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/betListView"
-        app:layout_constraintStart_toEndOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView2"
@@ -257,6 +279,7 @@
         android:text=" Horse Bet "
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/startButton" />
+        app:layout_constraintTop_toBottomOf="@+id/startButton"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

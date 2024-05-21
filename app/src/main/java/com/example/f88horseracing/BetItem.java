@@ -1,10 +1,10 @@
 package com.example.f88horseracing;
 
 public class BetItem {
-    private String dateTime;
-    private int betHorseNumber;
-    private int winningHorseNumber;
-    private int plusOrMinus;
+    private final String dateTime;
+    private final int betHorseNumber;
+    private final int winningHorseNumber;
+    private final int plusOrMinus;
 
     public BetItem(String dateTime, int betHorseNumber, int winningHorseNumber, int plusOrMinus) {
         this.dateTime = dateTime;
