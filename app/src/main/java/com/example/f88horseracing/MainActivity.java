@@ -1,5 +1,7 @@
 package com.example.f88horseracing;
 
+import static com.example.f88horseracing.R.*;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(v -> resetRace());
         resetRace();
     }
+
 
     private void startRace() {
 
