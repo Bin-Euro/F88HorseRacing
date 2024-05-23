@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkBox1.isChecked()) {
             int betAmount1 = bet1;
-            int plusOrMinus1 = (winningHorseNumber == 1) ? betAmount1 * 2 : -betAmount1;
+            int plusOrMinus1 = (winningHorseNumber == 1) ? betAmount1 * 1 : -betAmount1;
             balance += plusOrMinus1;
             totalWinningAmount += plusOrMinus1;
             String dateTime1 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -245,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkBox2.isChecked()) {
             int betAmount2 = bet2;
-            int plusOrMinus2 = (winningHorseNumber == 2) ? betAmount2 * 2 : -betAmount2;
+            int plusOrMinus2 = (winningHorseNumber == 2) ? betAmount2 * 1 : -betAmount2;
             balance += plusOrMinus2;
             totalWinningAmount += plusOrMinus2;
             String dateTime2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkBox3.isChecked()) {
             int betAmount3 = bet3;
-            int plusOrMinus3 = (winningHorseNumber == 3) ? betAmount3 * 2 : -betAmount3;
+            int plusOrMinus3 = (winningHorseNumber == 3) ? betAmount3 * 1 : -betAmount3;
             balance += plusOrMinus3;
             totalWinningAmount += plusOrMinus3;
             String dateTime3 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
