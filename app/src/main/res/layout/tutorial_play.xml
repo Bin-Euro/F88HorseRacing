@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bet_background"
+        android:background="@drawable/bet_border"
         android:padding="24dp"
         android:layout_gravity="center"
         android:elevation="4dp">
@@ -21,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="@drawable/bet_border"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -37,50 +36,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Winning horse:"
+                    android:text="Tutorial"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/wining_horse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="5dp"
-                    android:text="Number 3"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#9500FF"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.504"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/money">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your bet:"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#000000"
-                    android:textSize="10dp" />
-
-                <TextView
-                    android:id="@+id/choose_horse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="5dp"
-                    android:text="Number 3"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#9500FF"
-                    android:textSize="10dp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
@@ -88,14 +48,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Result"
+                android:justificationMode="inter_word"
+                android:text="First, the player chooses a horse by ticking the check box.\nNext, the player clicks on the box next to the horse and enters the bet.\nFinally, press start and the win or loss results will appear.\nPlays will be saved below."
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FF2F2F"
-                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -107,7 +70,7 @@
             android:paddingTop="24dp">
 
             <Button
-                android:id="@+id/btnBack"
+                android:id="@+id/btnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/luxury_button"
@@ -117,6 +80,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
