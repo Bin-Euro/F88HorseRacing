@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -221,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
         seekBar3.setThumb(getResources().getDrawable(R.drawable.horse2));
     }
 
-    private int getBetAmount(EditText editText) {
+    private int getBetAmount(@NonNull EditText editText) {
         String betString = editText.getText().toString();
         if (betString.isEmpty()) {
             return 0;
