@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler();
         Random random = new Random();
 
-        final int ProgressStep = 3;
+        final int ProgressStep = 4;
 
         // Biến boolean để theo dõi hướng đi của SeekBar
 
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (!raceOver) {
-                    handler.postDelayed(this, 20);
+                    handler.postDelayed(this, 50);
                 }
             }
         };
