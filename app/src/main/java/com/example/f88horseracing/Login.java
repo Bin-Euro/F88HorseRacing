@@ -1,5 +1,6 @@
 package com.example.f88horseracing;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class Login extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button ruleButton;
     private List<User> userList;
 
     @Override
@@ -29,6 +31,7 @@ public class Login extends AppCompatActivity {
         usernameEditText = findViewById(R.id.username);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
+        ruleButton = findViewById(R.id.rule_button);
 
 
         userList = new ArrayList<>();
@@ -52,18 +55,37 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Sai mật khẩu", Toast.LENGTH_SHORT).show();
                 }
             }
+            private boolean isValidUser(String username, String password) {
+                for (User user : userList) {
+                    if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+        ruleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog popupDialog = new Dialog(Login.this);
+                popupDialog.setCancelable(false);
+                popupDialog.setContentView(R.layout.tutorial_play);
+                Button btnContinue = (Button) popupDialog.findViewById(R.id.btnContinue);
+                btnContinue.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupDialog.cancel();
+                    }
+                });
+                popupDialog.show();
+
+
+
+            }
         });
     }
 
-
-    private boolean isValidUser(String username, String password) {
-        for (User user : userList) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
+
 
 

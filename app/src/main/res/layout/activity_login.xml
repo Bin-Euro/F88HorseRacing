@@ -6,6 +6,18 @@
     android:padding="16dp"
     android:gravity="center"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1D8121"
+        android:gravity="center"
+        android:text="F88-HouseRacing"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/logo"
@@ -36,4 +48,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00ff00"
         android:text="Đăng nhập" />
+    <Button
+        android:id="@+id/rule_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00ff00"
+        android:text="Luật chơi" />
 </LinearLayout>
