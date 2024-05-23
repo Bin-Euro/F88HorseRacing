@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void startRace() {
-
+        resetButton.setEnabled(false);
         startButton.setEnabled(false);
         bet1 = getBetAmount(editText1);
         bet2 = getBetAmount(editText2);
@@ -106,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
         isIncreasing1 = true;
         isIncreasing2 = true;
         isIncreasing3 = true;
+        checkBox1.setEnabled(false);
+        checkBox2.setEnabled(false);
+        checkBox3.setEnabled(false);
+        editText1.setEnabled(false);
+        editText2.setEnabled(false);
+        editText3.setEnabled(false);
 
         int totalBet = bet1 + bet2 + bet3;
         if (totalBet == 0) {
@@ -219,6 +225,9 @@ public class MainActivity extends AppCompatActivity {
         seekBar1.setThumb(getResources().getDrawable(R.drawable.horse2));
         seekBar2.setThumb(getResources().getDrawable(R.drawable.horse2));
         seekBar3.setThumb(getResources().getDrawable(R.drawable.horse2));
+        checkBox1.setEnabled(true);
+        checkBox2.setEnabled(true);
+        checkBox3.setEnabled(true);
     }
 
     private int getBetAmount(EditText editText) {
@@ -230,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showWinner(int winningHorseNumber) {
+        resetButton.setEnabled(true);
         List<BetItem> newBets = new ArrayList<>();
         int totalWinningAmount = 0;
 
